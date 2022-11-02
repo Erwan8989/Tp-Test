@@ -5,5 +5,5 @@
  * @author erwan
  *
  */
-module TPTest {
+module TP {
 }

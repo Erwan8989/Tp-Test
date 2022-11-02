@@ -1,8 +1,10 @@
+package fr.emse.dsi.junit;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class test {
+class QueueTest {
 
 	@Test
 	void test() {
