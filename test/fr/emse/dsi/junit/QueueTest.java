@@ -43,7 +43,9 @@ public class QueueTest {
 //			//ok
 //		}
 		assertEquals(fa1.pop(),"plop");
+		System.out.println("TEST " + fa1.isEmpty());
 		assertTrue(fa1.isEmpty());
+		System.out.println("PASSEEPASSEEPASSEEPASSEEPASSEEPASSEEPASSEEPASSEE " + fa1.isEmpty());
 		assertEquals(fa2.pop(), "a");
 		assertEquals(fa2.pop(),"b");
 		assertTrue(fa2.isEmpty());
