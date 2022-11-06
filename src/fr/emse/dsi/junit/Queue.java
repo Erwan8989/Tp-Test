@@ -4,15 +4,12 @@ public class Queue<E> {
 	private E elem;
 
 	public boolean isEmpty() {
-		String test = (String) this.getElem(this);
-		System.out.println(test);
-		if(test == null) {
+		
+		if(this.getElem(this) == null) {
 			return true;
 		} else {
 			return false; 
 		}
-		
-		
 	}
 	
 
