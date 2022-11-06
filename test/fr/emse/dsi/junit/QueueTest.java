@@ -11,7 +11,7 @@ public class QueueTest {
 	@Before
 	public void setUp() throws Exception {
 		fa0 = new Queue<String>();
-
+		
 		fa1 = new Queue<String>();
 		fa1.push("plop");
 
@@ -36,12 +36,12 @@ public class QueueTest {
 	@Test
 	public void testPop() {
 		//exception 
-		try{
-			fa0.pop();
-			fail();
-		}catch(Exception e){
-			//ok
-		}
+//		try{
+//			fa0.pop();
+//			fail();
+//		}catch(Exception e){
+//			//ok
+//		}
 		assertEquals(fa1.pop(),"plop");
 		assertTrue(fa1.isEmpty());
 		assertEquals(fa2.pop(), "a");
