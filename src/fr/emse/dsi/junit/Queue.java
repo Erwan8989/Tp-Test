@@ -4,7 +4,7 @@ public class Queue<E> {
 	private E elem;
 
 	public boolean isEmpty() {
-		if(this.getElem(this) == null) 
+		if(this.getElem() == null) 
 			return true;
 		else 
 			return false; 
@@ -24,7 +24,7 @@ public class Queue<E> {
 		return elembis;
 	}
 	
-	public E getElem(Queue<E> queue) {
+	public E getElem() {
 		return this.elem;
 	}
 	
