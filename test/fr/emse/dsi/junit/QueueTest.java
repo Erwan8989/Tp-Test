@@ -18,10 +18,6 @@ public class QueueTest {
 		fa2 = new Queue<String>();
 		fa2.push("a");
 		fa2.push("b");
-		fa2.push("c");
-		fa2.push("d");
-		fa2.push("e");
-		fa2.push("f");
 	}
 
 //	@Test

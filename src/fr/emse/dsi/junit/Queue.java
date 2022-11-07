@@ -51,9 +51,10 @@ public class Queue<E> {
     }
 
 	public E pop() {
-		E elembis = this.getElem();
-		elembis = (E) elembis.toString().replace("[","").replace("]","");
-
+		E elembis = (E) list.get(0);
+//		elembis = (E) elembis.toString().replace("[","").replace("]","");
+//		System.out.println("GET 0 " + list.get(0));
+//		Object test6 = list.get(0);
 		this.list.remove(0);
 		
 		return elembis;
