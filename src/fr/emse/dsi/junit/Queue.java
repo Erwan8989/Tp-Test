@@ -11,7 +11,8 @@ public class Queue<E> {
 
 	private E elem;
 	private List list;
-
+	
+//	Methode qui vérifie qu'un objet est null
 	public boolean isEmpty() {
 		if(this.getElem() == null || this.getSize() == 0) 
 			return true;
@@ -19,52 +20,44 @@ public class Queue<E> {
 			return false; 
 	}
 
+//		Métthode qui ajoute à la fin de la liste, un élément passé en paramètre
 	public void push(E elem) {
 		List<String> list = new ArrayList<String>();
-		String stringelem = (String) elem;
-		String test5 = String.valueOf(elem);
+		String elemString = String.valueOf(elem);
 		
 		E elembis = (E) String.valueOf(this.getElem());
-		elembis = (E) elembis.toString().replace("[", "").replace("]", "");
-		System.out.println("Elementbis " + elembis);
+		elembis = (E) elembis.toString().replace("[", "").replace("]", "").replace(", ", ""); // Nettoyage de la liste (supression de crochets ou virgules orphelines)
 		
-		if(elem == null) {
+		if(elem == null) { // Si aucun paramètre passé
 			this.elem = null;
-		} else if (elembis == "null") {
-			list.add(test5);
-			System.out.println("00000000000000000000000000 ");
+		} else if (elembis == "null") { // Itteration lors de l'ajout du premier éléments
+			list.add(elemString);
 		}
-		 else {
+		 else { // Itteration lors de l'ajout du second element et plus
+			 for(int i=0;i<list.size();i++){
+				    list.add(list.get(i));
+				} 
 			 list.add((String) elembis);
 			 list.add((String) elem);
 		 }
-		System.out.println("Après push " + list);
+		
 		this.list = list;
 	}
-	
-	public static int[] removeFirstElement(int[] arr) {
-        int newArr[] = new int[arr.length - 1];
-        for (int i = 1; i < arr.length; i++) {
-            newArr[i-1] = arr[i];
-        }
-        return newArr;
-    }
 
+//	Methode de suppresion et de renvoie du premier élement d'une liste
 	public E pop() {
-		E elembis = (E) list.get(0);
-//		elembis = (E) elembis.toString().replace("[","").replace("]","");
-//		System.out.println("GET 0 " + list.get(0));
-//		Object test6 = list.get(0);
-		this.list.remove(0);
+		E firstElem = (E) list.get(0); // On récupère le premier élement de la liste
+		this.list.remove(0); // On supprimer le premier élement de la liste
 		
-		return elembis;
+		return firstElem;
 	}
 	
+//	Methode qui retourne la liste d'un objet
 	public E getElem() {
-		System.out.println(this.list);
 		return (E) this.list;
 	}
 	
+//	Methode qui retourne la taille de la liste d'un objet
 	public int getSize() {
 		List test3 = this.list;
 		return test3.size();
