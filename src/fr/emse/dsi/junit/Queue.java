@@ -13,7 +13,6 @@ public class Queue<E> {
 	private List list;
 
 	public boolean isEmpty() {
-		System.out.println("IS EMPTY !!!!! " + this.list);
 		if(this.getElem() == null || this.getSize() == 0) 
 			return true;
 		else 
@@ -22,15 +21,25 @@ public class Queue<E> {
 
 	public void push(E elem) {
 		List<String> list = new ArrayList<String>();
+		String stringelem = (String) elem;
+		String test5 = String.valueOf(elem);
 		
-		if(elem == null) 
+		E elembis = (E) String.valueOf(this.getElem());
+		elembis = (E) elembis.toString().replace("[", "").replace("]", "");
+		System.out.println("Elementbis " + elembis);
+		
+		if(elem == null) {
 			this.elem = null;
-		 else 
+		} else if (elembis == "null") {
+			list.add(test5);
+			System.out.println("00000000000000000000000000 ");
+		}
+		 else {
+			 list.add((String) elembis);
 			 list.add((String) elem);
-			
-		
+		 }
+		System.out.println("Après push " + list);
 		this.list = list;
-		System.out.println("Push" + this.list);
 	}
 	
 	public static int[] removeFirstElement(int[] arr) {
@@ -45,20 +54,17 @@ public class Queue<E> {
 		E elembis = this.getElem();
 		elembis = (E) elembis.toString().replace("[","").replace("]","");
 
-		System.out.println("Get elem " + elembis);
 		this.list.remove(0);
 		
-		System.out.println("Après remove " + this.list);
 		return elembis;
 	}
 	
 	public E getElem() {
-		System.out.println("Get elem " + this.list);
+		System.out.println(this.list);
 		return (E) this.list;
 	}
 	
 	public int getSize() {
-		System.out.println("Get elem " + this.list);
 		List test3 = this.list;
 		return test3.size();
 	}
