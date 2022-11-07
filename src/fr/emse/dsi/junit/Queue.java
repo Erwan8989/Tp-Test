@@ -1,10 +1,7 @@
 package fr.emse.dsi.junit;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.io.*;
-import java.util.*;
 
 
 public class Queue<E> {
