@@ -55,10 +55,12 @@ public class Queue<E> {
 		return elem; // Affichage de l'élément supprimé
 	}
 	 
-	//print front and rear of the queue
-	public void print_frontRear() {
-	    System.out.println("Front of the queue:" + first_elem.data 
-	+ " Rear of the queue:" + last_elem.data);
+	public int getSize() {
+		return list_size;
+	}
+
+	public String getFront() {
+		return (first_elem.data);
 	}
 	
 }

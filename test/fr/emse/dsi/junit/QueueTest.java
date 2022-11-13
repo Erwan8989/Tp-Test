@@ -23,7 +23,6 @@ public class QueueTest {
 		fa3.push("a");
 		fa3.push("b");
 		fa3.push("b");
-		fa3.push("b");
 	}
 
 	@Test
@@ -56,8 +55,13 @@ public class QueueTest {
 	}
 	
 	@Test
-	public void testSize( ) {
+	public void testGetSize( ) {
 		assertEquals(fa3.getSize(), 3);
+	}
+	
+	@Test
+	public void testGetFront( ) {
+		assertEquals(fa3.getFront(), "a");
 	}
 
 }
