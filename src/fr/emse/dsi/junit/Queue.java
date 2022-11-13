@@ -6,57 +6,59 @@ import java.util.List;
 
 public class Queue<E> {
 
-	private E elem;
-	private List list;
+	private Node first_elem, last_elem; 
+	private int list_size; 
 	
-//	Methode qui vérifie qu'un objet est null
-	public boolean isEmpty() {
-		if(this.getElem() == null || this.getSize() == 0) 
+	//linked list node
+		private class Node { 
+			String data;
+			Node next;
+		}
+		
+	//  Methode qui vérifie qu'un objet est null
+	public boolean isEmpty()
+	{
+		if (list_size == 0)
 			return true;
 		else 
-			return false; 
+			return false;
 	}
-
-//		Métthode qui ajoute à la fin de la liste, un élément passé en paramètre
-	public void push(E elem) {
-		List<String> list = new ArrayList<String>();
-		String elemString = String.valueOf(elem);
-		
-		E elembis = (E) String.valueOf(this.getElem());
-		elembis = (E) elembis.toString().replace("[", "").replace("]", "").replace(", ", ""); // Nettoyage de la liste (supression de crochets ou virgules orphelines)
-		
-		if(elem == null) { // Si aucun paramètre passé
-			this.elem = null;
-		} else if (elembis == "null") { // Itteration lors de l'ajout du premier éléments
-			list.add(elemString);
+	 
+	// Méthode qui ajoute à la fin de la liste, un élément passé en paramètre
+		public void push(String elem)
+		{
+			Node old_last_elem = last_elem;
+			
+			last_elem = new Node();
+			last_elem.data = elem; // Ajoute l'élément passé en paramètre à la fin de la liste
+			
+			if (isEmpty()) { // Si la liste est vide, l'élément unique est à la fois le premier et le dernier élement de la liste
+				first_elem = last_elem;
+			} else { // Défini l'object instancié comme dernier élément de la liste
+				old_last_elem.next = last_elem; 
+			}
+			
+			list_size++; // Mise à jour de la taille de la liste
 		}
-		 else { // Itteration lors de l'ajout du second element et plus
-			 for(int i=0;i<list.size();i++){
-				    list.add(list.get(i));
-				} 
-			 list.add((String) elembis);
-			 list.add((String) elem);
-		 }
 		
-		this.list = list;
+	// Methode de suppression et de renvoie du premier élément
+	public String pop()
+	{
+		String elem = first_elem.data; // Récupération du premier élément de la liste, pour le renvoyer ultérieurement
+		
+		first_elem = first_elem.next; // On défini le second élement comme premier élement 
+		
+		if (isEmpty()) {
+			last_elem = null;
+		}
+		list_size--; // Mise à jour de la taille de la liste
+		return elem; // Affichage de l'élément supprimé
 	}
-
-//	Methode de suppresion et de renvoie du premier élement d'une liste
-	public E pop() {
-		E firstElem = (E) list.get(0); // On récupère le premier élement de la liste
-		this.list.remove(0); // On supprimer le premier élement de la liste
-		
-		return firstElem;
+	 
+	//print front and rear of the queue
+	public void print_frontRear() {
+	    System.out.println("Front of the queue:" + first_elem.data 
+	+ " Rear of the queue:" + last_elem.data);
 	}
 	
-//	Methode qui retourne la liste d'un objet
-	public E getElem() {
-		return (E) this.list;
-	}
-	
-//	Methode qui retourne la taille de la liste d'un objet
-	public int getSize() {
-		List test3 = this.list;
-		return test3.size();
-	}
 }

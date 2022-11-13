@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class QueueTest {
-	Queue<String> fa0, fa1, fa2;
+	Queue<String> fa0, fa1, fa2, fa3;
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,6 +18,12 @@ public class QueueTest {
 		fa2 = new Queue<String>();
 		fa2.push("a");
 		fa2.push("b");
+		
+		fa3 = new Queue<String>();
+		fa3.push("a");
+		fa3.push("b");
+		fa3.push("b");
+		fa3.push("b");
 	}
 
 	@Test
@@ -47,6 +53,11 @@ public class QueueTest {
 		assertEquals(fa2.pop(), "a");
 		assertEquals(fa2.pop(),"b");
 		assertTrue(fa2.isEmpty());
+	}
+	
+	@Test
+	public void testSize( ) {
+		assertEquals(fa3.getSize(), 3);
 	}
 
 }
