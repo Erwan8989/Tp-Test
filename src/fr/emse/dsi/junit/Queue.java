@@ -9,13 +9,12 @@ public class Queue<E> {
 	private Node first_elem, last_elem; 
 	private int list_size; 
 	
-	//linked list node
 		private class Node { 
 			String data;
 			Node next;
 		}
 		
-	//  Methode qui vérifie qu'un objet est null
+	// Methode qui vérifie qu'un objet est null
 	public boolean isEmpty()
 	{
 		if (list_size == 0)
@@ -55,12 +54,12 @@ public class Queue<E> {
 		return elem; // Affichage de l'élément supprimé
 	}
 	 
-	//	Retourne la taille de la liste
+	// Retourne la taille de la liste
 	public int getSize() {
 		return list_size;
 	}
 	
-	//	Retourne le premier élément de la liste
+	// Retourne le premier élément de la liste
 	public String getFront() {
 		return (first_elem.data);
 	}

@@ -12,20 +12,41 @@ public class StackTest {
 	public void setUp() throws Exception {
 
 		fa0 = new Stack();
-		fa0.push("a");
-		fa0.push("b");
-		fa0.push("c");
-		fa0.push("d");
+		
+		fa1 = new Stack();
+		fa1.push("plop");
+
+		fa2 = new Stack();
+		fa2.push("a");
+		fa2.push("b");
 	}
 
 	@Test
 	public void testIsEmpty() {
+		assertTrue(fa0.isEmpty());
+		assertFalse(fa1.isEmpty());
+	}
+
+	@Test
+	public void testPush() {
+		assertTrue(fa0.isEmpty());
+		fa0.push("toto");
 		assertFalse(fa0.isEmpty());
 	}
 
 	@Test
 	public void testPop() {
-		assertEquals(fa0.pop(),"d");
-		assertEquals(fa0.pop(),"c");
+		//exception 
+		try{
+			fa0.pop();
+			fail();
+		}catch(Exception e){
+			//OK
+		}
+		assertEquals(fa1.pop(),"plop");
+		assertTrue(fa1.isEmpty());
+		assertEquals(fa2.pop(), "b");
+		assertEquals(fa2.pop(),"a");
+		assertTrue(fa2.isEmpty());
 	}
 }
