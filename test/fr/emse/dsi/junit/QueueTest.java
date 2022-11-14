@@ -22,7 +22,7 @@ public class QueueTest {
 		fa3 = new Queue<String>();
 		fa3.push("a");
 		fa3.push("b");
-		fa3.push("b");
+		fa3.push("c");
 	}
 
 	@Test

@@ -19,6 +19,11 @@ public class StackTest {
 		fa2 = new Stack();
 		fa2.push("a");
 		fa2.push("b");
+		
+		fa3 = new Stack();
+		fa3.push("a");
+		fa3.push("b");
+		fa3.push("c");
 	}
 
 	@Test
@@ -48,5 +53,10 @@ public class StackTest {
 		assertEquals(fa2.pop(), "b");
 		assertEquals(fa2.pop(),"a");
 		assertTrue(fa2.isEmpty());
+	}
+	
+	@Test
+	public void testGetSize( ) {
+		assertEquals(fa3.getSize(), 3);
 	}
 }

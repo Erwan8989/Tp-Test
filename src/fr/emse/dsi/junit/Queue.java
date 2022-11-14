@@ -1,9 +1,5 @@
 package fr.emse.dsi.junit;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Queue<E> {
 
 	private Node first_elem, last_elem; 
@@ -33,7 +29,7 @@ public class Queue<E> {
 			
 			if (isEmpty()) { // Si la liste est vide, l'élément unique est à la fois le premier et le dernier élement de la liste
 				first_elem = last_elem;
-			} else { // Défini l'object instancié comme dernier élément de la liste
+			} else { // Défini le nouveau dernier élement de la liste
 				old_last_elem.next = last_elem; 
 			}
 			

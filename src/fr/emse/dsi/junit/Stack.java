@@ -43,6 +43,7 @@ public class Stack {
 			last_elem = null;
 		}
 		list_size--; // Mise à jour de la taille de la liste
+		
 		return elem; // Affichage de l'élément supprimé
 	}
 	 
